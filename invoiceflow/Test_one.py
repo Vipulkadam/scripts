@@ -1,31 +1,61 @@
 from selenium import webdriver
 from selenium.common import NoSuchElementException
 
+from selenium.webdriver.common import NoSuchElementException
+
 global time
 import time
 import pytest
 
+from selenium import webdriver
 
 
+from webdriver_manager.chrome import ChromeDriverManager
+
+from selenium.webdriver.chrome.service import Service as ChromeService
 from pynput.keyboard import Key, Controller
 
+
+from webdriver_manager.chrome import ChromeDriverManager
+
+
+
+from selenium.webdriver.chrome.service import Service ChromeService
+
+from selenium.webdriver.chrome.service import Service as ChromeService
+driver =webdriver.chrome()
 
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
+from selenium.webdriver.support.ui import WebDriverWait
 
+from selenium.webdriver.support import expected_conditions as EC
 @pytest.fixture()
 def test_setup():
     global driver
     import time
 
     from selenium.webdriver import ActionChains
+
     from selenium.webdriver.chrome.service import Service as ChromeService
+
+    from webdriver_manager.chrome import ChromeDriverManager
+
+    from webdriver_manager.chrome import ChromeDriverManager
+
+    driver= webdriver.chrome(service = ChromeService(ChromeDriverManager().install()))
+
+
     from selenium.webdriver.common.by import By
     global By
     from webdriver_manager.chrome import ChromeDriverManager
 
+
+    driver = webdriver.chrome(service=ChromeService(ChromeDriverManager().install()))
     driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
+
+    driver = webdriver.chrome(service=ChromeService(ChromeDriverManager().install()))
     driver.implicitly_wait(10)
 
 
@@ -445,4 +475,82 @@ def test_pvscanpositive(test_setup):
     submitbutton = driver.find_element(by=By.XPATH, value="//button[normalize-space()='Submit']")
     submitbutton.click()
     time.sleep(2)
+
+
+
+
+    queries= ["one", "two", "three"]
+
+
+
+    for querie in queries:
+
+            search_box = driver.find_element(by=By.XPATH, value= "tet")
+            search_box.send_keys(querie)
+            search_box.send_keys(Key.RETURN)
+
+
+    try:
+        cards = driver.find_element(by=By.CSS_SELECTOR, value="text")
+
+
+        if len(cards) > 0:
+
+            for card in cards:
+
+                card_name = driver.find_element(by=By.CLASS, value="test")
+                card_name.text
+                cards_details =driver.find_element(by=By.CLASS, value= "test")
+                cards_details.text
+
+        else:
+            print("threis no search result ragarding the input search")
+
+
+    except Exception as e:
+        print("there is no element found")
+
+
+    reuslt = WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.CLASS,"name")))
+
+    Element = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CLASS
+    , "name")))
+
+
+            = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.CLASS,"NAME"))
+
+
+
+
+    driver.switch_to.frame("iframe_id")
+
+    driver.switch_to.default_content()
+
+    driver.switch_to.dafault_content()
+
+
+    window_handles = driver.window_handles
+
+    all_windows= driver.window_handles
+
+    driver.switch_to.window(window_handles[1])
+
+    driver.switch_to.window(original_window)
+
+
+    driver.switch_to.window(original_window)
+
+
+    alert = driver.switch_to.alert
+
+
+    alert.accept()
+
+    alert.dismiss()
+
+    print(alert.text)
+
+
+
+
 

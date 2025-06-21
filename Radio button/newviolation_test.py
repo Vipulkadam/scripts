@@ -6,6 +6,8 @@ from pynput.keyboard import Key, Controller
 from selenium.webdriver.support import wait
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.common import NoSuchElementException
+
 @pytest.fixture()
 def test_Setup():
     global driver
