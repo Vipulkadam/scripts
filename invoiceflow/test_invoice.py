@@ -30,7 +30,7 @@ def test_pvscannegative(test_setup):
     driver.get("https://www.devpropvivo.com")
     time.sleep(5)
 
-g
+
     Login_button = driver.find_element(by=By.CSS_SELECTOR, value="#propVivoLoginBtn")
     Login_button.click()
     time.sleep(2)
