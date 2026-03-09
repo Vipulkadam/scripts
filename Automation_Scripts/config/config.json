@@ -1,0 +1,10 @@
+{
+    "base_url": "https://www.moneycontrol.com/",
+
+    "credentials": {
+        "email": "vipulkadam.vk9@gmail.com",
+        "password": "Vipul@123"
+    },
+
+    "browser": "chromium"
+}
