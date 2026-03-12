@@ -14,17 +14,17 @@ def test_add_stocks(browser_page):
     #  Login
     login = LoginPage(page)
     login.navigate()
-    login.login(email, password)
+    login.login_flow(email, password)
     #  Go to watchlist
     watchlist = WatchlistPage(page)
     #  Count initial stocks
     initial_count = watchlist.count_stocks_in_watchlist()
     print("Initial Stocks in watchlist:", initial_count)
 
-    # ⃣ Read stock symbols from CSV
+    # Read stock symbols from CSV
     symbols = read_stocks_from_csv("Automation_Scripts/data/stocks.csv")  # e.g., ITC, ONGC, BHEL
 
-    # 6⃣ Add stocks one by one
+    # Add stocks one by one
     for stock in symbols:
         watchlist.add_stock(stock)
 
@@ -34,4 +34,3 @@ def test_add_stocks(browser_page):
 
     #  Assertion
     assert final_count >= initial_count, "Final stock count should be greater or equal to initial count"
-

@@ -16,7 +16,7 @@ def browser_page():
         context.close()
         browser.close()
 
-#extara for handleing multiple browsers
+#extra_fixture for handleing multiple browsers
 # @pytest.fixture(params=["chromium", "firefox"])
 # def browser_page(request):
 #
