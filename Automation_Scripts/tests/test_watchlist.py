@@ -21,7 +21,7 @@ def test_add_stocks(browser_page):
     initial_count = watchlist.count_stocks_in_watchlist()
     print("Initial Stocks in watchlist:", initial_count)
 
-    # Read stock symbols from CSV
+    # ⃣ Read stock symbols from CSV
     symbols = read_stocks_from_csv("Automation_Scripts/data/stocks.csv")  # e.g., ITC, ONGC, BHEL
 
     # Add stocks one by one
@@ -34,3 +34,4 @@ def test_add_stocks(browser_page):
 
     #  Assertion
     assert final_count >= initial_count, "Final stock count should be greater or equal to initial count"
+

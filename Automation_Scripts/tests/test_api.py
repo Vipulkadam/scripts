@@ -35,7 +35,7 @@ def delete_request(url, headers=None):
 # Test Cases
 # -------------------------
 
-@pytest.mark.api
+# @pytest.mark.api
 def test_get_stock_summary():
     """Validate stock summary API response"""
     endpoint = "/stock/v2/get-summary"

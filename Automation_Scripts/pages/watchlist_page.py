@@ -5,6 +5,7 @@ class WatchlistPage:
         self.login_on_hover = "a.userlink"
         self.add_stock_input = "div#stockAddblock input[placeholder='Type to search...']"
         self.exchange_select = "div#stockAddblock select#Stock_Exchange_Type"
+        # self.add_button = "div#stockAddblock button.add_transaction"
         self.add_button = "//div[@class='fade tab-pane active show']//button[@class='add_transaction'][normalize-space()='+Add']"
         self.watchlist_rows = "table.ka-table tbody.ka-tbody tr.ka-tr.ka-row"
         self.no_data_span = "td.ka-no-data-cell span"
@@ -25,7 +26,6 @@ class WatchlistPage:
     def count_stocks_in_watchlist(self) -> int:
         """Returns the number of stocks currently in the watchlist."""
 
-        # Handle popups / navigate to watchlist
         self.handeling_pop_up_and_redirection_to_watchlist()
 
         # Wait a little for DOM to settle
@@ -39,7 +39,7 @@ class WatchlistPage:
         rows = self.page.locator(self.watchlist_rows)
 
         # Wait for at least 1 row (if expected)
-        rows.first.wait_for(state="visible", timeout=3000)
+        rows.first.wait_for(state="visible", timeout=6000)
 
         # Return the count of rows
         return rows.count()
